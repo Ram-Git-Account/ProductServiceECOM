@@ -64,7 +64,7 @@ public class FakeStoreProductService implements ProductService {
     }
 
     @Override
-    public List<GenericProductDto> getAllProducts() {
+    public List<GenericProductDto> getAllProducts(String authToken) {
         List<FakeStoreProductDto> fakeStoreProductDtos = fakeStoreAdapter.getAllProducts();
 
         List<GenericProductDto> genericProductDtos = new ArrayList<>();

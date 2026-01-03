@@ -9,14 +9,14 @@ import com.productservice.productservice.repositories.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+//import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 public class ProductServiceApplication {
 
 //    private final CategoryRepository categoryRepository;

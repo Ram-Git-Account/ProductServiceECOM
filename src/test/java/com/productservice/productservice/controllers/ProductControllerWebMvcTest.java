@@ -15,6 +15,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -32,11 +33,13 @@ public class ProductControllerWebMvcTest {
 
     @Inject
     private ObjectMapper objectMapper;
+//    @MockBean
+//    private String authHeader;
 
 
     @Test
     void testGetAllProductsReturnsEmptyList() throws Exception {
-        when(productService.getAllProducts())
+        when(productService.getAllProducts(anyString()))
                 .thenReturn(new ArrayList<>());
 
         mockMvc.perform(get("/products"))
@@ -51,7 +54,7 @@ public class ProductControllerWebMvcTest {
         genericProductDtos.add(new GenericProductDto());
         genericProductDtos.add(new GenericProductDto());
 
-        when(productService.getAllProducts())
+        when(productService.getAllProducts(anyString()))
                 .thenReturn(genericProductDtos);
 
         mockMvc.perform(get("/products"))

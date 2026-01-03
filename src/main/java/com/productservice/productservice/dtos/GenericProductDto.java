@@ -17,6 +17,17 @@ public class GenericProductDto {
     private String image;
     private int inventoryCount;
 
+    public GenericProductDto(String title, int price, String category, String description, String image, int inventoryCount) {
+        this.title = title;
+        this.price = price;
+        this.category = category;
+        this.description = description;
+        this.image = image;
+        this.inventoryCount = inventoryCount;
+    }
+    public GenericProductDto() {
+    }
+
     public static GenericProductDto from(Product product) {
         GenericProductDto genericProductDto = new GenericProductDto();
         genericProductDto.setTitle(product.getTitle());
