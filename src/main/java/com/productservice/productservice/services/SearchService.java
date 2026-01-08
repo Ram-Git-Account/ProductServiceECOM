@@ -36,9 +36,9 @@ public class SearchService {
         }
         for (int i = 1; i < sortParams.size(); i++) {
             if (sortParams.get(i).getSortType().equals("ASC")) {
-                sort.and(Sort.by(sortParams.get(i).getSortParamName()).ascending());
+               sort = sort.and(Sort.by(sortParams.get(i).getSortParamName()).ascending());
             } else {
-                sort.and(Sort.by(sortParams.get(i).getSortParamName()).descending());
+               sort = sort.and(Sort.by(sortParams.get(i).getSortParamName()).descending());
             }
         }
 
